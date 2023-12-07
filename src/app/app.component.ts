@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng310820';
+
+  public myTitle: string = 'MyCourse';
+  public myDrawer!: MatDrawer;
+
+  public setSideNav(drawer: MatDrawer): void { 
+    this.myDrawer = drawer;
+  }
+
+  public onClick(): void {
+  }
+  
 }
