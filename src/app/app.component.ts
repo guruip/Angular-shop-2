@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +6,9 @@ import { MatDrawer } from '@angular/material/sidenav';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  public myTitle: string = 'MyCourse';
-  public myDrawer!: MatDrawer;
-
-  public setSideNav(drawer: MatDrawer): void { 
-    this.myDrawer = drawer;
-  }
-
-  public onClick(): void {
-  }
-  
+  // constructor(private appRef: ApplicationRef) {
+  //   setTimeout(() => {
+  //     this.appRef.tick();
+  //   }, 7000);
+  // }
 }

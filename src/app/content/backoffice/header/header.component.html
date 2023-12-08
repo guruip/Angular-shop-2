@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row">
+    <button (click)="drawer?.toggle()"
+            mat-icon-button class="example-icon"
+            aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="my_class" [ngStyle]="" [ngClass]="{'first': true, 'second': true, 'third': false}">{{ownTitle}}</span>
+    <app-exchange-rates></app-exchange-rates>
+  </div>
+
+
+  <div>
+
+    <mat-icon [matBadge]="cartProductCount$ | async" matBadgeColor="warn"
+              [routerLink]="['/backoffice/cart']">shopping_cart
+    </mat-icon>
+  </div>
+
+</mat-toolbar>

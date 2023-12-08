@@ -1,7 +1,2 @@
-<app-header [title]="myTitle" [drawer]="myDrawer"></app-header>
-<app-side-menu (setSideNavControl)="setSideNav($event)">
-    <ng-template #contentTemplate>
-        <div>main content</div>
-    </ng-template>
-    
-</app-side-menu>
+<router-outlet></router-outlet>
+<app-modal></app-modal>

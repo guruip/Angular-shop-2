@@ -1,0 +1,10 @@
+<p>default works!</p>
+<div>
+  <input [(ngModel)]="user.name">
+</div>
+<div>
+  <input [(ngModel)]="user.surname">
+</div>
+<div>
+  {{user.getStamp() | date : 'hh:mm:ss'}}
+</div>
