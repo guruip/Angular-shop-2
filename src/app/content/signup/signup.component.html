@@ -1,0 +1,43 @@
+<div class="auth-content">
+  <mat-card>
+    <mat-card-content>
+      <div [formGroup]="signupForm">
+        <p>Sign Up to continue</p>
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Username" type="text"
+                 formControlName="username" appUserValidator>
+        </mat-form-field>
+        <div fxLayout="column" formArrayName="emails">
+          <div fxLayout="row"
+               *ngFor="let fCtrl of getControls(signupForm, 'emails') as controls; index as i; first as f ">
+            <mat-form-field appearance="fill" fxFlex="90">
+              <input matInput placeholder="Email" type="email"
+                     [formControlName]="i">
+            </mat-form-field>
+            <div fxFlex="10" fxLayout="row">
+              <mat-icon (click)="addEmail()" *ngIf="f">add</mat-icon>
+              <mat-icon *ngIf="controls.length > 1" (click)="removeEmail(i)">delete</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div>Male</div>
+          <app-switcher formControlName="male"></app-switcher>
+        </div>
+        <div formGroupName="password">
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Password" type="password" formControlName="password">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Confirm Password" type="password" formControlName="cpassword">
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" (click)="signup(signupForm.value)"
+                [disabled]="signupForm.invalid || signupForm.pending">Sign Up
+        </button>
+        <a mat-button [routerLink]="['/login']">Sign Up</a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  {{signupForm.pending}}
+</div>
